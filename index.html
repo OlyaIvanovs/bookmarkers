@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bookmarker</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+</head>
+<body onload="fetchBookmarks()">
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Bookmarker
+      </h1>
+      <p class="subtitle">
+        Bookmark your favourite sites
+      </p>
+
+      <form id="myForm">
+        <div class="field">
+          <label class="label">Website Name</label>
+          <div class="control has-icons-left">
+            <input class="input" type="text" placeholder="e.g Google" id="siteName">
+            <span class="icon is-small is-left">
+              <i class="fa fa-globe"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Website URL</label>
+          <div class="control has-icons-left">
+            <input class="input" type="text" placeholder="e.g. https://www.google.co.nz/" id="siteUrl">
+            <span class="icon is-small is-left">
+              <i class="fa fa-external-link"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="control">
+          <button class="button is-primary">Submit</button>
+        </div>
+      </form>
+      <br>
+      <div class="container">
+        <div class="tile is-ancestor">
+          <div class="tile is-4 is-vertical is-parent">
+            <div class="tile is-child box">
+              <p class="title is-5">Facebook</p>
+            </div>
+            <div class="tile is-child box">
+              <p class="title">Google</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <script
+      src="https://code.jquery.com/jquery-3.1.1.js"
+      integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+      crossorigin="anonymous"></script>
+      <script src="index.js"></script>
+    </div>
+  </section>
+</body>
+</html>
