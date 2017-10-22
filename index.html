@@ -6,8 +6,9 @@
   <title>Bookmarker</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+  <script src="node_modules/handlebars/dist/handlebars.min.js"></script>
 </head>
-<body onload="fetchBookmarks()">
+<body>
   <section class="section">
     <div class="container">
       <h1 class="title">
@@ -42,26 +43,28 @@
           <button class="button is-primary">Submit</button>
         </div>
       </form>
+
       <br>
       <div class="container">
         <div class="tile is-ancestor">
-          <div class="tile is-4 is-vertical is-parent">
-            <div class="tile is-child box">
-              <p class="title is-5">Facebook</p>
-            </div>
-            <div class="tile is-child box">
-              <p class="title">Google</p>
-            </div>
-          </div>
+          <div class="tile is-4 is-vertical is-parent" id="bookmarkers_list"></div>
         </div>
       </div>
-
-
+      <script src="index.js"></script>
+      <script id="bookmarker-template" type="text/x-handlebars-template">
+            {{#each bookmarks}}
+            <div class="tile is-child box">
+              <p class="title is-5">{{name}}</p>
+              <a href="{{url}}" class="button is-link" target="_blank">Visit</a>
+              <button class="button is-danger delete-bookmark">Delete</button>
+            </div>
+            {{/each}}
+      </script>
       <script
       src="https://code.jquery.com/jquery-3.1.1.js"
       integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
       crossorigin="anonymous"></script>
-      <script src="index.js"></script>
+      
     </div>
   </section>
 </body>
